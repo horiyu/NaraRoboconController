@@ -1,0 +1,391 @@
+html {
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+/* camera */
+#camera {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: scale(-1, 1);
+}
+#background {
+  position: fixed;
+  height: 100vh; /* 全画面表示 */
+  z-index: -100;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* top */
+
+.top {
+  position: relative;
+  width: 100%;
+}
+.topLeft {
+  position: absolute;
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom :0; */ */
+}
+.boxButton {
+  height: 40px;
+  /* margin: 10px 20px; */
+}
+.boxButton:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.backButton {
+  display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: #000;
+}
+
+.topRight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom :0;
+}
+.topCenter {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom :0;
+}
+
+/* topRight */
+/* .topRight:not(.modal__content .modal__bg) { */
+.topRight {
+  text-align: right;
+  margin-top: 10px;
+  /* margin: 10px; */
+}
+#topRight-reload:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.topRight-item {
+  margin: 10px;
+}
+.modal__content {
+  text-align: start;
+}
+.js-modal-open:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.content{
+
+}
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.modal__bg{
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal__content{
+    background: #fff;
+    border-radius: 4px;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+
+.memo {
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  color: #000000;
+  border: 1px solid #ffffff;
+  box-shadow: 1px 1px 2px 0 #707070 inset;
+  border-radius: 4px;
+  outline: none;
+  resize: vertical;
+  height: 300px;
+  width: 100%;
+  padding: 10px;
+}
+
+.memoDown > input {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+.controller-modal__content {
+  text-align: center;
+}
+.controller-table {
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border:1px solid #707070;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.controller-table td{
+  height: 30px;
+  text-align: center;
+}
+
+/* developer tools */
+#topRight-developer textarea, #pass{
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  color: #000;
+  border: 1px solid #ffffff;
+  box-shadow: 1px 1px 2px 0 #707070 inset;
+  border-radius: 4px;
+  outline: none;
+  resize: vertical;
+  padding: 10px;
+  height: 40px;
+  width: 300px;
+}
+
+
+/* setting */
+#serialport-setting {
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 15px;
+  resize: none;
+  width:300px;
+  height:25px;
+  margin-top: 10px;
+  padding-left: 20px;
+  background-color:transparent;
+  border: transparent;
+}
+
+
+.checkbox-topRight-setting {
+  margin-left: 20px;
+}
+
+.checkbox-topRight-setting input:not(#checkbox-all) {
+  margin-left: 40px;
+}
+
+.setting-subTitle {
+  font-weight:bold;
+  clear: left;
+}
+
+.setting-item {
+  margin-bottom: 30px;
+}
+
+.contact-setting a{
+  margin-top: 0px;
+  margin-bottom: 2px;
+  text-decoration: none;
+  text-align:
+
+  color: #2997ff;
+}
+.contact-setting a:hover {
+  text-decoration: underline;
+}
+
+
+/* leftBottom */
+.bottom {
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 15px;
+  /* color: #10FF62; */
+  /* color: #00eb50; */
+  color: #00d649;
+  resize: none;
+  width:300px;
+  height:300px;
+  background-color:transparent;
+  border: transparent;
+  padding-left: 10px;
+}
+.leftBottom {
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  /* overflow: hidden; */
+    /* background-color: darkgrey; */
+    /* width: 90%; */
+    /* height: 400px; */
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.bottom:hover {
+  /* background-color: inherit; */
+  color: #000;
+  overflow-y: scroll;
+  /* opacity: 0.5; */
+}
+.rightBottom {
+  position:absolute;
+  right: 0;
+  bottom: 0;
+}
+.leftBottom::-webkit-scrollbar {
+    display:none;
+}
+/*.leftBottom::-webkit-scrollbar :hover {
+    /* display:block; */
+    color: red;
+    background-color: red;
+} */
+/* .leftBottom::-webkit-scrollbar {
+    background: rgba(0,0,0,0.3);
+}
+.leftBottom::-webkit-scrollbar:hover {
+    background: rgba(0,0,0,0.1);
+} */
+
+
+
+/* Timer-Setting */
+.timer-controls-setting div{
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+.timer-controls, .timer-controls-setting {
+  overflow: hidden;
+}
+.timer-controls-setting > div:hover {
+  /* box-shadow: 1px 1px 2px 0 #707070 inset; */
+  background-color: #707070;
+  color: #fff;
+}
+.timer-controls-setting > div:checked {
+  /* box-shadow: 1px 1px 2px 0 #707070 inset; */
+  background-color: #707070;
+  color: #fff;
+}
+
+
+.setting-button {
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: auto;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 0px 20px;
+  cursor: pointer;
+}
+.setting-button {
+  overflow: hidden;
+}
+.setting-button:hover {
+  /* box-shadow: 1px 1px 2px 0 #707070 inset; */
+  background-color: #707070;
+  color: #fff;
+}
+.setting-button:checked {
+  /* box-shadow: 1px 1px 2px 0 #707070 inset; */
+  background-color: #707070;
+  color: #000;
+}
+
+
+/* prevew */
+#example {
+  display: none;
+}
+#preview img {
+  width: 200px;
+  margin: 10px;
+  border: solid 1px silver;
+}
+#background img {
+  /* width: 100vw; */
+  height: 100vh;
+  display: block;
+  margin: auto;
+}
+
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 0 2px #777;
+}
+::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 10px;
+  box-shadow: none;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #a3a3a3;
+}
+
+
+
+#clearMessage {
+  width: 100%;
+}
+.clearMessage {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  color: #fff;
+  opacity: 0.7;
+  font-style: italic;
+  font-size: 200px;
+  z-index: -10;
+  display     : inline-block;
+  padding-left: 100%;
+  white-space : nowrap;
+  line-height : 1em;
+  animation   : scrollAnime 2s linear infinite;
+  /* overflow: hidden; */
+  transform: translateY(-50%) translateX(-50%);
+}
+@keyframes scrollAnime {
+    0% { transform: translateX(0)}
+   /* 50% { transform: translateX(-50%);color: #000;} */
+  100% { transform: translateX(-100%)}
+}

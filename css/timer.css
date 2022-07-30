@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'Digital-Timer';
+  src: url('digital-7.ttf');
+}
+
+.container {
+  font-family: 'Digital-Timer';
+  font-size: 14px;
+  color: #fff;
+  margin: 0px auto;
+  width: 400px;
+  padding: 0px;
+  text-align: center;
+/*
+  height: 0;
+  border-bottom: 120px solid #999;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+*/
+}
+
+.time {
+  position:relative;
+  height: 120px;
+  font-size: 40px;
+
+  border-top: 80px solid #000;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  height: 0;
+}
+.timer span, #limit {
+  position:relative;
+  top:-92px;
+}
+.timer-controls {
+  margin-left: 40px;
+}
+#start, #reset {
+  position:relative;
+  margin-left: 0px;
+  width: 160px;
+  border-top: 20px solid orange;
+  background: none;
+  height: 0;
+}
+#start {
+  border-color: #00cc5d;
+  border-left: 10px solid transparent;
+}
+#reset {
+  border-right: 10px solid transparent;
+}
+#start p, #reset p{
+
+
+    width: 160px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom :0;
+    margin: auto;
+}
+
+
+#timer {
+  line-height: 70px;
+}
+#centerLine {
+  position: absolute;
+  top: 7px;
+  left: 44.5%;
+}
+/* .time > p {
+  margin: 0px;
+  font-family: Meiryo;
+} */
+#limit {
+  font-size: 20px;
+}
+#progressBar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 10px;
+  width: 100%;
+  -webkit-appearance: none;
+}
+::-webkit-progress-bar {
+  background-color: #000;
+}
+::-webkit-progress-value {
+  background-color: red;
+}
+
+.timer-controls {
+  overflow: hidden;
+}
+
+.timer-controls > div:hover {
+  opacity: 0.7;
+}
+
+.timer-controls div, .timer-controls-setting div {
+  cursor: pointer;
+  user-select: none;
+}
+.timer-controls div{
+  float: left;
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>NaraRoboconController</title>
+        <!-- <link rel="stylesheet" href="../../robocon-timer/css/styles.css"> -->
+        <link rel="stylesheet" href="css/timer.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- camera -->
+        <div id="background"></div>
+
+        <div id="clearMessage"></div>
+
+        <section class="top">
+
+            <!-- Timer -->
+            <section class="topCenter timer">
+                <div class="container">
+                    <section class="time">
+                        <!-- <progress id="progressBar" value="0" max="100">0%</progress> -->
+                        <span id="timer">0:00</span>
+                        <span id="centerLine"></span>
+                        <span id="timerCU"></span>
+                        <div id="limit">0:00</div>
+                    </section>
+                    <div class="timer-controls">
+                        <div id="start"><p id="st">Start</p></div>
+                        <div id="reset"><p>Reset</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topLeft">
+                <a class="boxButton backButton" href="#" onclick="history.back(); return false;">
+                    <img class="boxButton" src="img/icon/boxButton.png" onclick="">
+                </a>
+            </section>
+
+            <section class="topRight">
+
+                <!-- Reload -->
+                <span class="topRight-item" id="topRight-reload">
+                    <a class="" onclick="listPorts();"><img class="top-icon reload-icon" id="" src="img/icon/reload.png" height="50px" alt=""></a>
+                </span>
+
+                <!-- Memo -->
+                <span class="topRight-item" id="topRight-memo">
+                    <a class="js-modal-open" onclick="load();" data-target="modal01"><img class="top-icon memo-icon" id="top-icon[3]" src="img/icon/memo.png" height="50px" alt=""></a>
+                    <div id="modal01" class="modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+                            <form name="form1">
+                                <textarea class="memo" name="Memo"></textarea>
+                            </form>
+                            <p class="memoDown">
+                                <input type="image" value="" onclick=save(); src="img/icon/save.png" alt="上書き保存" height="25px"></input>
+                                <input type="image" value="" onclick=load(); src="img/icon/reload.png" alt="読み込み" height="25px"></input>
+                            </p>
+                        </div><!--modal__inner-->
+                    </div><!--modal-->
+                </span>
+
+                <!-- Controller -->
+                <span class="topRight-item" id="topRight-controller">
+                    <a class="js-modal-open" onclick="load();" data-target="modal02"><img class="top-icon controller-icon" src="img/icon/controller.png" height="50px" alt=""></a>
+                    <div id="modal02" class="modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content controller-modal__content">
+                            <!-- <img src="img/keyboard/img-keyboard-test.png" width="70%" alt=""> -->
+                            <!-- <table class="controller-table" border="1" width="70%">
+                                <tr><td>前進</td>
+                                    <td>W　↑</td>
+                                </tr>
+                                <tr><td>後退</td>
+                                    <td>S　↓</td>
+                                </tr>
+                                <tr><td>右</td>
+                                    <td>D　→</td>
+                                </tr>
+                                <tr><td>左</td>
+                                    <td>A　←</td>
+                                </tr>
+                                <tr><td>左旋回</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr><td>右旋回</td>
+                                    <td>E</td>
+                                </tr>
+                                <tr><td></td>
+                                    <td>Ctrl + U</td>
+                                </tr>
+                            </table> -->
+                            <!-- https://digitalextremes.zendesk.com/hc/ja/articles/200410054-PC-%E3%81%A7%E3%81%AE%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95-%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%A8%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%91%E3%83%83%E3%83%89 -->
+                        </div><!--modal__inner-->
+                    </div><!--modal-->
+                </span>
+
+                <!-- Developer -->
+                <span class="topRight-item" id="topRight-developer">
+                    <a class="js-modal-open" data-target="modal04"><img class="top-icon developer-icon" src="img/icon/developer.png" height="50px" alt=""></a>
+                    <div id="modal04" class="modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content developer-modal__content">
+                            <p style="font-weight:bold; font-size:20px; margin-bottom: 10px;">Developer Tools</p>
+                            <p class="setting-subTitle">serialWrite</p>
+                            <input type="radio" name="serialWrite" id="default" value="default" checked="checked">Default</input>
+                            <input type="radio" name="serialWrite" id="custom" value="custom">Custom</input><br>
+                            <p>keyup</p>
+                            <textarea id="SWdown" name=""></textarea>
+                            <p>keydown</p>
+                            <textarea id="SWup" name=""></textarea>
+                            <p></p>
+
+                            <input id="pass" type="passsword"></input>
+                            <button id="enter" style="margin: 50px;width:25px;height:25px;opacity:0;cursor: wait;" onclick="devTools_select()">Enter</button>
+                            <p>Designed by Horiyu</p>
+                        </div><!--modal__inner-->
+                    </div><!--modal-->
+                </span>
+
+                <!-- Setting -->
+                <span class="topRight-item" id="topRight-setting">
+                    <a class="js-modal-open" onclick="load();" data-target="modal03"><img class="top-icon setting-icon" src="img/icon/setting.png" height="50px" alt=""></a>
+                    <div id="modal03" class="modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+                            <p style="font-weight:bold; font-size:20px; margin-bottom: 10px;">設定</p>
+                            <div class="setting-item">
+                                <p class="setting-subTitle">シリアルポート</p>
+                                <div class="serialport-setting">
+                                    <div id="portSerectButton"></div>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <p class="setting-subTitle">タイマー</p>
+                                <div class="timer-controls-setting">
+                                    <div id="min" class="setting-button js-modal-close" onclick="timelineUpdate(`Set Timer 2:30`)">2:30</div>
+                                    <div id="sec" class="setting-button js-modal-close" onclick="timelineUpdate(`Set Timer 3:00`)">3:00</div>
+                                    <!-- <div id="st">Start</div>
+                                    <div id="reset">Reset</div> -->
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <p class="setting-subTitle">背景</p>
+                                <div>
+                                    <div class="setting-button js-modal-close" onclick="background('camera')">webカメラ</div>
+                                    <div class="setting-button js-modal-close" onclick="background('black')">ダーク</div>
+                                    <div class="setting-button js-modal-close" onclick="background('white')">ライト</div>
+                                    <label class="setting-button for="example">
+                                        テーマをアップロード
+                                    <input  type="file" id="example" accept="image/*" multiple>
+                                    </label>
+                                    <div id="preview"></div>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <p class="setting-subTitle">ツールバー</p>
+                                <div class="checkbox-topRight checkbox-topRight-setting">
+                                    <form name="checkboxForm">
+                                        <!-- <input type="checkbox" id="checkbox-all" checked="checked" name="checkbox"  onclick="AllChecked();"><label for="checkbox-all">すべてのアイコンを表示</label><br> -->
+                                        <p>
+                                            <input type="checkbox" id="checkbox-reload" checked="checked" name="checkbox"  onclick="switchIcon(0);DisChecked();"><label for="checkbox-reload">リロードボタンを表示</label><br>
+                                            <!-- <input type="checkbox" id="checkbox-connect" checked="checked" name="checkbox"  onclick="switchIcon(1);DisChecked();"><label for="checkbox-connect">接続アイコンを表示</label><br> -->
+                                            <input type="checkbox" id="checkbox-memo" checked="checked" name="checkbox"  onclick="switchIcon(2);DisChecked();"><label for="checkbox-memo">メモ帳ボタンを表示</label><br>
+                                            <input type="checkbox" id="checkbox-controller" checked="checked" name="checkbox"  onclick="switchIcon(3);DisChecked();"><label for="checkbox-controller">コントローラーアイコンを表示</label><br>
+                                            <input type="checkbox" id="checkbox-developer" checked="checked" name="checkbox"  onclick="switchIcon(4);DisChecked();"><label for="checkbox-developer">Developer Toolsを表示</label><br>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <p class="setting-subTitle">タイムライン</p>
+                                <input class="setting-button js-modal-close" type="button" value="タイムラインをクリア" onclick="clearTimeline()" />
+                            </div>
+
+                            <div class="setting-item">
+                                <p class="setting-subTitle">　</p>
+                                <div class="contact-setting">
+                                    <!-- <a href="../../contact/index.html">不具合等の報告</a>
+                                    <a href="../../home/index.html">HOMEへ</a> -->
+                                </div>
+                            </div>
+
+
+                        </div><!--modal__inner-->
+                    </div><!--modal-->
+                </span>
+            </section>
+        </section>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>window.$ = window.jQuery = require('jquery');</script>
+        <script type="text/javascript" src="index.js"></script>
+
+
+        <textarea readonly class="bottom leftBottom" id="leftBottom"></textarea>
+        <textarea readonly class="bottom rightBottom" id="rightBottom"></textarea>
+        <!-- <div onclick="autoScroll()" class="setting-button" style="position: absolute;top: 40%;left: 0;">autoScroll</div> -->
+
+            <script src="main.js"></script>
+            <script src="js/main.js"></script>
+            <script src="js/timer.js"></script>
+    </body>
+</html>
